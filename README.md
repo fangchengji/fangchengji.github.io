@@ -1,7 +1,8 @@
 # fangchengji.github.io
 
-Personal site of Fangcheng Ji (Felix) — perception · VLA / VLM · agents. Autonomous driving
-at Li Auto (2020.8 – 2026.3); drone cameras (VLM / Agent) at DJI since 2026.4.
+Personal site of Fangcheng Ji (Felix) — VLM / agents · perception · VLA. Autonomous driving
+at Li Auto (2020.8 – 2026.3); at DJI since 2026.3, owner of Agent / VLM model R&D for the
+Camera Man project (10-person team).
 Static, self-contained (no external CSS/JS/CDN), bilingual (EN / 中文 toggle).
 
 - Homepage: <https://fangchengji.github.io/>
