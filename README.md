@@ -31,7 +31,19 @@ file the site shows the gradient "F" monogram instead.
 ./publish.sh "what changed"      # git add -A && commit && push
 ```
 
-GitHub Pages rebuilds in ~30s. `main` branch, repo root, no build step.
+GitHub Pages rebuilds in ~30s. `main` branch, repo root, no build step
+(`.nojekyll` keeps the files byte-for-byte as committed).
+
+## Verify
+
+```bash
+bash deploy/verify_pages.sh      # external check: every route 200, bogus path 404,
+                                 # local-vs-published checksums, no phone in page or CV
+```
+
+The script ends with `RESULT: ALL_200` when the published site matches the working
+copy. `deploy/` is gitignored on purpose (it holds the pre-redaction résumé and the
+retired nginx config), so it is never published.
 
 ## History
 
