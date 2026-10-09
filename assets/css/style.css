@@ -8,7 +8,7 @@
   --line-2:rgba(255,255,255,.16);
   --fg:#e9eef6;
   --fg-dim:#a8b8ce;
-  --fg-dim-2:#94a6bd;
+  --fg-dim-2:#a9bacc;
   --accent:#4ea1ff;
   --accent-2:#31d0aa;
   --amber:#ffb454;
@@ -81,7 +81,8 @@ img{max-width:100%}
   padding:88px 22px 74px;
 }
 .kicker{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-2);margin:0 0 16px;font-weight:600}
-.hero h1{font-size:clamp(28px,3.9vw,44px);line-height:1.25;margin:0 0 18px;font-weight:750;letter-spacing:.005em}
+.nw{white-space:nowrap}
+.hero h1{font-size:clamp(28px,3.9vw,44px);line-height:1.25;margin:0 0 18px;font-weight:750;letter-spacing:.005em;text-wrap:balance}
 .hero-role{color:var(--fg);font-weight:600;margin:0 0 12px;font-size:17px}
 .hero-focus{color:var(--fg-dim);margin:0 0 22px;max-width:62ch}
 .chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
@@ -92,8 +93,8 @@ img{max-width:100%}
 .actions{display:flex;flex-wrap:wrap;gap:12px}
 .btn{
   display:inline-block;font-size:14.5px;font-weight:600;color:var(--fg);
-  background:var(--panel);border:1px solid var(--line-2);border-radius:10px;
-  padding:11px 20px;transition:.16s;
+  background:var(--panel);border:1px solid var(--line-2);border-radius:999px;
+  padding:11px 24px;transition:.16s;
 }
 .btn:hover{text-decoration:none;border-color:var(--accent);background:rgba(78,161,255,.12);transform:translateY(-1px)}
 .btn-primary{background:linear-gradient(135deg,#4ea1ff,#2f7fe0);border-color:transparent;color:#04121f}
@@ -103,8 +104,10 @@ img{max-width:100%}
   background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
   padding:18px 20px;backdrop-filter:blur(6px);
 }
-.stat b{display:block;font-size:26px;font-weight:750;color:var(--fg);letter-spacing:.01em}
-.stat span{display:block;font-size:13px;color:var(--fg-dim-2);margin-top:2px}
+.stat b{display:flex;align-items:baseline;gap:4px;font-size:28px;font-weight:750;color:var(--fg);letter-spacing:.01em;line-height:1.15}
+.stat b .unit{font-size:14px;font-weight:600;color:var(--fg-dim)}
+.stat .sep{font-size:15px;font-weight:600;color:var(--fg-dim-2);align-self:center}
+.stat span{display:block;font-size:13px;color:var(--fg-dim-2);margin-top:4px}
 
 /* ---------- sections ---------- */
 .section{padding:74px 0;border-bottom:1px solid var(--line)}
@@ -116,11 +119,12 @@ img{max-width:100%}
 
 /* org */
 .org-head{
-  display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline;
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;
   border-left:3px solid var(--accent);padding:2px 0 2px 16px;margin-bottom:26px;
 }
+.project + .org-head{margin-top:38px}
 .org-name{font-size:19px;font-weight:700}
-.org-role{font-size:14px;color:var(--fg-dim-2)}
+.org-role{font-size:14px;color:var(--fg-dim-2);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 
 /* project */
 .project{
@@ -161,6 +165,7 @@ img{max-width:100%}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;display:flex;flex-direction:column}
 .card:hover{border-color:var(--line-2)}
 .metric{display:block;font-size:27px;font-weight:750;color:var(--accent);line-height:1.1}
+.metric span{font-size:15px;font-weight:600;color:var(--fg-dim);letter-spacing:.02em}
 .card h4{font-size:16px;margin:10px 0 4px;font-weight:680;line-height:1.45}
 .card p{margin:0;color:var(--fg-dim);font-size:13.5px}
 .card p:last-child{margin-top:auto;padding-top:10px}
@@ -197,13 +202,17 @@ img{max-width:100%}
   .hero-inner{grid-template-columns:1fr;gap:34px;padding:64px 22px 56px}
   .grid,.grid-2{grid-template-columns:1fr 1fr}
   .two-col{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:1fr 1fr;gap:12px}
 }
 @media (max-width:640px){
   .head-inner{height:auto;padding:12px 0;flex-direction:column;align-items:flex-start;gap:8px}
   .menu{gap:10px 12px;align-items:center}
   .menu a{font-size:13px}
   .grid,.grid-2{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:1fr 1fr}
   .project{padding:20px 18px}
+  .project header h3{display:block}
+  .project header h3 .period{margin-top:8px}
   .timeline-list .when,.news .when{flex:0 0 auto}
   .section{padding:56px 0}
 }
