@@ -6,7 +6,10 @@ Camera Man project (10-person team).
 Static, self-contained (no external CSS/JS/CDN), bilingual (EN / 中文 toggle).
 
 - Homepage: <https://fangchengji.github.io/>
-- Résumé: `assets/Felix-resume-v0.4.3.pdf` (phone number removed)
+- Résumé: **not published** (download link and PDF route both pulled 2026-10, because the
+  hosted PDF still said "Li Auto 2020.8 – present"). Source of truth is the Apple Pages file
+  in `~/Documents/简历/`; after a new export, run the phone-redaction recipe before re-adding
+  the link. The scrubbed copy is kept outside the repo, in gitignored `deploy/`.
 
 ## Structure
 
